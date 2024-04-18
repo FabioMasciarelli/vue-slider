@@ -4,7 +4,7 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            index: 0,
+            curIndex: 0,
             images: [
                 {
                     image: "./img/01.webp",
@@ -37,19 +37,19 @@ createApp({
 
     methods: {
         next: function() {
-            if(this.index === this.images.length - 1) {
-                this.index = 0;
+            if(this.curIndex === this.images.length - 1) {
+                this.curIndex = 0;
             } else {
-                this.index++;
+                this.curIndex++;
             }
         },
 
-        before: function() {
-            if(this.index === 0) {
-                this.index = this.images.length - 1;
+        prev: function() {
+            if(this.curIndex === 0) {
+                this.curIndex = this.images.length - 1;
             } else {
-                this.index--;
+                this.curIndex--;
             }
-        },
+        }
     }
 }).mount("#app");

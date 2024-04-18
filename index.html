@@ -39,11 +39,11 @@
                             <!-- immagini -->
                             <!-- immagine 1 -->
                             <div class="my-carousel-item active" carousel-item="1">
-                                <img class="img-fluid" :src="images[index].image"
+                                <img class="img-fluid" :src="images[curIndex].image"
                                     alt=""/>
                                 <div class="item-description px-3">
-                                    <h2> {{ images[index].title }} </h2>
-                                    <p> {{ images[index].text }} </p>
+                                    <h2> {{ images[curIndex].title }} </h2>
+                                    <p> {{ images[curIndex].text }} </p>
                                 </div>
                             </div>
                             <!-- /immagine 1 -->
@@ -53,17 +53,16 @@
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
                             <div class="my-previous position-absolute">
-                                <span class="my-prev-hook" @click="before"></span>
+                                <span class="my-prev-hook" @click="prev"></span>
                             </div>
                             <!-- next -->
                             <div class="my-next position-absolute">
                                 <span class="my-next-hook" @click="next"></span>
                             </div>
                             <!-- immagini interne -->
-                            <img class="img-fluid my-thumbnail active" src="./img/01.webp"
-                                alt="Thumbnail of Marvel's Spiderman Miles Morale picture" />
-                            <img class="img-fluid my-thumbnail" src="./img/02.webp"
-                                alt="Thumbnail of Ratchet & Clank: Rift Apart picture" />
+                            <img class="img-fluid my-thumbnail active" v-for ="(element, index) in images" :src="element.image"
+                                :alt="images[index].title" @click="curIndex = index" />
+                            
                             <!-- etc ... -->
                         </div>
                     </div>
