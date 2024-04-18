@@ -26,7 +26,9 @@
 </head>
 
 <body>
-    <main>
+    <main id="app">
+
+        
         <div class="container-fluid p-5">
             <div class="row text-center">
                 <div class="col-12 p-3" id="my-before-carousel"></div>
@@ -51,11 +53,11 @@
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
                             <div class="my-previous position-absolute">
-                                <span class="my-prev-hook"></span>
+                                <span class="my-prev-hook" @click="before"></span>
                             </div>
                             <!-- next -->
                             <div class="my-next position-absolute">
-                                <span class="my-next-hook"></span>
+                                <span class="my-next-hook" @click="next"></span>
                             </div>
                             <!-- immagini interne -->
                             <img class="img-fluid my-thumbnail active" src="./img/01.webp"

@@ -36,6 +36,20 @@ createApp({
     },
 
     methods: {
+        next: function() {
+            if(this.index === this.images.length - 1) {
+                this.index = 0;
+            } else {
+                this.index++;
+            }
+        },
 
+        before: function() {
+            if(this.index === 0) {
+                this.index = this.images.length - 1;
+            } else {
+                this.index--;
+            }
+        },
     }
 }).mount("#app");
